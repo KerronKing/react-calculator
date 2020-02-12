@@ -4,7 +4,7 @@ The aim of this project was to build a simple calculator app using React.
 
 ## Live Demo
 
-Click [here]() to see a live demo.
+Click [here](https://kerron-king-calculator.herokuapp.com/) to see a live demo.
 
 ## Built With
 
