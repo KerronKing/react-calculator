@@ -1,5 +1,4 @@
 #root {
-  border: 1px solid;
   margin: 0 auto;
   margin-top: 10%;
   width: 700px;
@@ -14,7 +13,19 @@
   font-size: 3rem;
   float: right;
   margin: 0;
-  position: relative;
-  right: 1rem;
-  top: 1.5rem;
+  padding-right: 1rem;
+  padding-top: 1.5rem;
+}
+.panel-row {
+  border: 0.5px solid #E6E4ED;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+}
+.panel-row div { 
+  border: 0.5px solid #E6E4ED;
+  font-size: 1.5rem;
+  line-height: 5.5rem;
+  text-align: center;
+  width: 25%;
 }
