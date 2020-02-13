@@ -1,0 +1,40 @@
+#root {
+  margin: 0 auto;
+  margin-top: 5%;
+  width: 700px;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+}
+#display {
+  background-color: gray;
+  color: white;
+  display: flex;
+  font-weight: bold;
+  height: 100px;
+}
+#display p {
+  font-size: 3rem;
+  margin: 0;
+  padding-right: 1rem;
+  padding-top: 1.5rem;
+  position: relative;
+  left: 40rem;
+}
+.panel-row {
+  border: 0.5px solid #E6E4ED;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+}
+.panel-row div { 
+  border: 0.5px solid #E6E4ED;
+  font-size: 1.5rem;
+  line-height: 5.5rem;
+  text-align: center;
+  width: 25%;
+}
+.orange { background-color: orange; }
+.white { background-color: white; }
+.wide { width: 50% !important }
