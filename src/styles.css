@@ -4,3 +4,17 @@
   margin-top: 10%;
   width: 700px;
 }
+#display {
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  height: 100px;
+}
+#display p {
+  font-size: 3rem;
+  float: right;
+  margin: 0;
+  position: relative;
+  right: 1rem;
+  top: 1.5rem;
+}
