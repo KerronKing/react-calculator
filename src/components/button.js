@@ -7,10 +7,10 @@ class Button extends React.Component {
     this.namePass = this.namePass.bind(this);
   }
 
-  namePass(e) {
-    const name = e.target.name;
-    this.props.handleClick(name);
-  }
+  // namePass(e) {
+  //   const name = e.target.name;
+  //   this.props.handleClick(name);
+  // }
 
   render() {
     const { name, color, wide } = this.props;
@@ -25,7 +25,7 @@ Button.propTypes = {
   name: PropTypes.string.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
-  handleClick: PropTypes.func.isRequired,
+  // handleClick: PropTypes.func.isRequired,
 };
 Button.defaultProps = {
   color: 'orange',
