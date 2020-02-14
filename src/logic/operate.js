@@ -1,25 +1,23 @@
 import Big from 'big';
 
 const calc = (() => {
-  const operate = (numberOne, numberTwo, operator) => {
+  const operate = (numberOne, numberTwo, operation) => {
     let total;
     const first = Big(numberOne);
     const second = Big(numberTwo);
 
-    if (operator === '+') {
-      total = first + second;
-    } else if (operator === '-') {
-      total = first - second;
-    } else if (operator === 'X') {
-      total = first * second;
-    } else if (operator === '/') {
-      total = first / second;
-    } else if (operator === '+') {
-      total = first + second;
-    } else if (operator === '%' && numberTwo === null) {
-      total = first / 100;
-    } else if (operator === '%' && numberTwo !== null) {
-      total = (first / 100) * second;
+    if (operation === '+') {
+      total = first.plus(second);
+    } else if (operation === '-') {
+      total = first.minus(second);
+    } else if (operation === 'X') {
+      total = first.timees(second);
+    } else if (operation === '/') {
+      total = first.div(second);
+    } else if (operation === '%' && numberTwo === null) {
+      total = first.div(100);
+    } else if (operation === '%' && numberTwo !== null) {
+      total = (first.div(100)).times(second);
     }
 
     return total;
