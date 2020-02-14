@@ -11,7 +11,7 @@ const calc = (() => {
     } else if (operation === '-') {
       total = first.minus(second);
     } else if (operation === 'X') {
-      total = first.timees(second);
+      total = first.times(second);
     } else if (operation === '/') {
       total = first.div(second);
     } else if (operation === '%' && numberTwo === null) {
