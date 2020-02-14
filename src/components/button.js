@@ -9,8 +9,8 @@ class Button extends React.Component {
 
   namePass(e) {
     const { name } = e.target;
-    const { handleClick } = this.props;
-    handleClick(name);
+    const { passInfo } = this.props;
+    passInfo(name);
   }
 
   render() {
@@ -26,7 +26,7 @@ Button.propTypes = {
   name: PropTypes.string.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
-  handleClick: PropTypes.func.isRequired,
+  passInfo: PropTypes.func.isRequired,
 };
 Button.defaultProps = {
   color: 'orange',
