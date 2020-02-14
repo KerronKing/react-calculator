@@ -17,10 +17,11 @@ class App extends React.Component {
   handleClick(buttonName) {
     const { total, next, operation } = this.state;
     let obj;
-
+    // console.log('we reach');
     const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    const syms = ['AC', '+', '-', 'X', '/', '.', '%'];
+    const syms = ['+', '-', 'X', '/', '.', '%'];
     const equal = '=';
+    const reset = 'AC';
 
     if (total === null && nums.indexOf(buttonName) >= 0) {
       this.setState({ total: buttonName });
@@ -36,7 +37,7 @@ class App extends React.Component {
     } else if (total !== null
       && operation !== null
       && next !== null
-      && buttonName === equal) {
+      && ((buttonName === equal) || (buttonName === reset))) {
       obj = method.calculate(this.state, buttonName);
       this.setState({
         total: obj.total,
@@ -51,7 +52,7 @@ class App extends React.Component {
     return (
       <div id="app">
         <Display result={total} />
-        <ButtonPanel onClick={this.handleClick} />
+        <ButtonPanel handleClick={this.handleClick} />
       </div>
     );
   }

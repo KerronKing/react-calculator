@@ -10,6 +10,7 @@ class Button extends React.Component {
   namePass(e) {
     const { name } = e.target;
     const { passInfo } = this.props;
+    // console.log('clicked');
     passInfo(name);
   }
 
@@ -17,7 +18,15 @@ class Button extends React.Component {
     const { name, color, wide } = this.props;
     const classes = color === 'white' && wide ? 'white wide' : color;
     return (
-      <div className={classes}>{name}</div>
+      <div
+        className={classes}
+        onClick={this.namePass}
+        onKeyPress={this.namePass}
+        role="button"
+        tabIndex="-1"
+      >
+        {name}
+      </div>
     );
   }
 }
