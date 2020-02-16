@@ -7,10 +7,9 @@ class Button extends React.Component {
     this.namePass = this.namePass.bind(this);
   }
 
-  namePass(e) {
-    const { name } = e.target;
-    const { passInfo } = this.props;
-    // console.log('clicked');
+  namePass() {
+    const { name, passInfo } = this.props;
+    console.log(name);
     passInfo(name);
   }
 
@@ -22,6 +21,7 @@ class Button extends React.Component {
         className={classes}
         onClick={this.namePass}
         onKeyPress={this.namePass}
+        value={name}
         role="button"
         tabIndex="-1"
       >
