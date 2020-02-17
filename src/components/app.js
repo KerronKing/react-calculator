@@ -63,6 +63,8 @@ class App extends React.Component {
         total: buttonName,
         operation: null,
       });
+    } else if (operation === '=' && symClicked) {
+      this.setState({ operation: buttonName });
     }
   }
 
