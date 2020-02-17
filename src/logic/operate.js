@@ -12,15 +12,18 @@ const calc = (() => {
       total = first.minus(second);
     } else if (operation === 'X') {
       total = first.times(second);
-    } else if (operation === '/') {
+    } else if (operation === '/' && second > 0) {
       total = first.div(second);
+    } else if (operation === '/' && second === '0') {
+      total = 0;
     } else if (operation === '%' && !numberTwo) {
       total = first.div(100);
     } else if (operation === '%' && numberTwo !== null) {
       total = (first.div(100)).times(second);
     }
-    const result = parseFloat(total.toExponential()).toString();
-    return result;
+
+    const result = parseFloat(total).toString();
+    return isNaN(result) ? '0' : result;
   };
   return { operate };
 })();
