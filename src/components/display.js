@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Display = props => {
-  const { result } = props;
+  let { result } = props;
+  if (!result) result = '0';
   return (
     <div id="display">
       <span>{result}</span>

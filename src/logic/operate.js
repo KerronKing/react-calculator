@@ -4,7 +4,11 @@ const calc = (() => {
   const operate = (numberOne, numberTwo, operation) => {
     let total;
     const first = Big(numberOne);
-    const second = Big(numberTwo);
+    const second = !numberTwo ? 0 : Big(numberTwo);
+
+    if (first === '0' || second === '0') {
+      total = 'infinity';
+    }
 
     if (operation === '+') {
       total = first.plus(second);
@@ -14,13 +18,14 @@ const calc = (() => {
       total = first.times(second);
     } else if (operation === '/') {
       total = first.div(second);
-    } else if (operation === '%' && numberTwo === null) {
+    } else if (operation === '%' && !numberTwo) {
       total = first.div(100);
     } else if (operation === '%' && numberTwo !== null) {
       total = (first.div(100)).times(second);
     }
-
-    return total;
+    console.log(total);
+    const result = parseFloat(total.toExponential()).toString();
+    return result;
   };
   return { operate };
 })();
