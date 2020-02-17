@@ -41,7 +41,7 @@ class App extends React.Component {
       this.setState({ operation: buttonName });
     } else if (total && !operation && numClicked) {
       this.setState({ total: total += buttonName });
-    } else if (total && operation && !next && numClicked) {
+    } else if (total && (operation && operation !== '=') && !next && numClicked) {
       this.setState({ next: buttonName });
     } else if (total && operation && next && numClicked) {
       this.setState({ next: next += buttonName });
@@ -58,7 +58,13 @@ class App extends React.Component {
         next: null,
         operation: null,
       });
+    } else if (operation === '=' && numClicked) {
+      this.setState({
+        total: buttonName,
+        operation: null,
+      });
     }
+    console.log(this.state);
   }
 
   render() {
