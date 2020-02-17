@@ -6,10 +6,6 @@ const calc = (() => {
     const first = Big(numberOne);
     const second = !numberTwo ? 0 : Big(numberTwo);
 
-    if (first === '0' || second === '0') {
-      total = 'infinity';
-    }
-
     if (operation === '+') {
       total = first.plus(second);
     } else if (operation === '-') {
@@ -23,7 +19,6 @@ const calc = (() => {
     } else if (operation === '%' && numberTwo !== null) {
       total = (first.div(100)).times(second);
     }
-    console.log(total);
     const result = parseFloat(total.toExponential()).toString();
     return result;
   };

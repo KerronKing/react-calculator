@@ -19,73 +19,46 @@ class App extends React.Component {
     const { operation } = this.state;
     let obj;
     const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    const syms = ['+', '-', 'X', '/', '%', '+/-'];
-    const equal = '=';
-    const reset = 'AC';
+    const syms = ['+', '-', 'X', '/', '%'];
     const decimalPoint = '.';
 
-    if (total === null && nums.indexOf(buttonName) >= 0) {
-      this.setState({
-        total: buttonName,
-      });
-    } else if (total !== null
-      && buttonName === decimalPoint
-      && (total.indexOf(decimalPoint) === -1)) {
-      this.setState({
-        total: total += buttonName,
-      });
-    } else if (total !== null
-      && next !== null
-      && buttonName === decimalPoint
-      && (next.indexOf(decimalPoint) === -1)) {
-      this.setState({
-        next: next += buttonName,
-      });
-    } else if (total !== null
-      && operation === null
-      && syms.indexOf(buttonName) >= 0) {
-      this.setState({
-        operation: buttonName,
-      });
-    } else if (total !== null
-      && operation === null
-      && nums.indexOf(buttonName) >= 0) {
-      this.setState({
-        total: total += buttonName,
-      });
-    } else if (total !== null
-      && operation !== null
-      && next === null
-      && nums.indexOf(buttonName) >= 0) {
-      this.setState({
-        next: buttonName,
-      });
-    } else if (total !== null
-      && operation !== null
-      && next !== null
-      && nums.indexOf(buttonName) >= 0) {
-      this.setState({
-        next: next += buttonName,
-      });
-    } else if (total !== null
-      && operation !== null
-      && (!next || next)
-      && (buttonName === equal)) {
+    const numClicked = nums.indexOf(buttonName) >= 0;
+    const symClicked = syms.indexOf(buttonName) >= 0;
+    const decClicked = buttonName === '.';
+    const equalClicked = buttonName === '=';
+    const resetClicked = buttonName === 'AC';
+    const plusMinusClicked = buttonName === '+/-';
+
+    if (!total && numClicked) {
+      this.setState({ total: buttonName });
+    } else if (total && plusMinusClicked) {
+      this.setState({ total: `-${total}` });
+    } else if (total && decClicked && total.indexOf(decimalPoint) === -1) {
+      this.setState({ total: total += buttonName });
+    } else if (total && next && decClicked && next.indexOf(decimalPoint) === -1) {
+      this.setState({ next: next += buttonName });
+    } else if (total && !operation && symClicked) {
+      this.setState({ operation: buttonName });
+    } else if (total && !operation && numClicked) {
+      this.setState({ total: total += buttonName });
+    } else if (total && operation && !next && numClicked) {
+      this.setState({ next: buttonName });
+    } else if (total && operation && next && numClicked) {
+      this.setState({ next: next += buttonName });
+    } else if (total && operation && (!next || next) && equalClicked) {
       obj = method.calculate(this.state, operation);
-      console.log(obj);
       this.setState({
         total: obj.total,
         next: obj.next,
         operation: obj.operation,
       });
-    } else if (buttonName === reset) {
+    } else if (resetClicked) {
       this.setState({
         total: null,
         next: null,
         operation: null,
       });
     }
-    console.log(this.state);
   }
 
   render() {
