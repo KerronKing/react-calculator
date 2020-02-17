@@ -64,7 +64,6 @@ class App extends React.Component {
         operation: null,
       });
     }
-    console.log(this.state);
   }
 
   render() {
