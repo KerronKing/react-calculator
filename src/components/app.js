@@ -15,46 +15,43 @@ class App extends React.Component {
   }
 
   handleClick(buttonName) {
-    let { total, next, operation } = this.state;
+    let { total, next } = this.state;
+    const { operation } = this.state;
     let obj;
     const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const syms = ['+', '-', 'X', '/', '.', '%'];
     const equal = '=';
     const reset = 'AC';
-
-    console.log(buttonName);
-
-
     if (total === null && nums.indexOf(buttonName) >= 0) {
-      this.setState({ total: buttonName });
-      console.log(this.state);
-      console.log(buttonName);
+      this.setState({
+        total: buttonName,
+      });
     } else if (total !== null
       && operation === null
       && syms.indexOf(buttonName) >= 0) {
-      this.setState({ operation: buttonName });
-      console.log(this.state);
-      console.log(buttonName);
+      this.setState({
+        operation: buttonName,
+      });
     } else if (total !== null
       && operation === null
       && nums.indexOf(buttonName) >= 0) {
-      this.setState({ total: total += buttonName });
-      console.log(this.state);
-      console.log(buttonName);
+      this.setState({
+        total: total += buttonName,
+      });
     } else if (total !== null
       && operation !== null
       && next === null
       && nums.indexOf(buttonName) >= 0) {
-      this.setState({ next: buttonName });
-      console.log(this.state);
-      console.log(buttonName);
+      this.setState({
+        next: buttonName,
+      });
     } else if (total !== null
       && operation !== null
-      && next === null
+      && next !== null
       && nums.indexOf(buttonName) >= 0) {
-      this.setState({ next: next += buttonName });
-      console.log(this.state);
-      console.log(buttonName);
+      this.setState({
+        next: next += buttonName,
+      });
     } else if (total !== null
       && operation !== null
       && next !== null
@@ -65,9 +62,8 @@ class App extends React.Component {
         next: obj.next,
         operation: buttonName,
       });
-      console.log(this.state);
-      console.log(buttonName);
     }
+    console.log(this.state);
   }
 
   render() {

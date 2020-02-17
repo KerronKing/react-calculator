@@ -12,15 +12,14 @@
   color: white;
   display: flex;
   font-weight: bold;
+  justify-content: flex-end;
   height: 100px;
 }
-#display p {
+#display span {
   font-size: 3rem;
-  margin: 0;
+  margin-right: 1rem;
   padding-right: 1rem;
   padding-top: 1.5rem;
-  position: relative;
-  left: 40rem;
 }
 .panel-row {
   border: 0.5px solid #E6E4ED;

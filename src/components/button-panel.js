@@ -10,7 +10,6 @@ class ButtonPanel extends React.Component {
 
   passInfo(buttonName) {
     const { handleClick } = this.props;
-    // console.log('passed');
     handleClick(buttonName);
   }
 

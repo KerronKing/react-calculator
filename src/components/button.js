@@ -9,7 +9,6 @@ class Button extends React.Component {
 
   namePass() {
     const { name, passInfo } = this.props;
-    console.log(name);
     passInfo(name);
   }
 
