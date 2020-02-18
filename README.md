@@ -9,7 +9,11 @@ Click [here](https://kerron-king-calculator.herokuapp.com/) to see a live demo.
 ## Built With
 
 This app was built using the following:
+- Node.js
 - React
+- React-DOM
+- ES6
+- npm
 - CSS3
 - HTML5
 
