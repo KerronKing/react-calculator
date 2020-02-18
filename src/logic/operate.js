@@ -17,7 +17,6 @@ const calc = (() => {
     } else if (operation === '/' && second === '0') {
       total = 0;
     } else if (operation === '%' && !numberTwo) {
-
       total = first.div(100);
     } else if (operation === '%' && numberTwo !== null) {
       total = (first.div(100)).times(second);
