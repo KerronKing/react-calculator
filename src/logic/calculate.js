@@ -10,6 +10,7 @@ const method = (() => {
       obj.total = calc.operate(obj.total, obj.next, buttonName);
       obj.next = null;
       obj.operation = '=';
+
     }
     return obj;
   };

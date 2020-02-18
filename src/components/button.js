@@ -35,6 +35,7 @@ Button.propTypes = {
   color: PropTypes.string,
   wide: PropTypes.bool,
   passInfo: PropTypes.func.isRequired,
+
 };
 Button.defaultProps = {
   color: 'orange',
