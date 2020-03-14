@@ -37,9 +37,9 @@ Feel free to drop a :+1: to show your support. It'd be greatly appreciated it :p
 
 :bust_in_silhouette: Kerron King
 
-Github: [@KerronKing](https://github.com/KerronKing)
-Twitter: [@KerronTriniDev](https://twitter.com/kerrontrinidev)
-Linkedin: [Kerron King](linkedin.com/in/kerron-king-53912516a)
+* Github: [@KerronKing](https://github.com/KerronKing)
+* Twitter: [@KerronTriniDev](https://twitter.com/kerrontrinidev)
+* Linkedin: [Kerron King](linkedin.com/in/kerron-king-53912516a)
 
 ## License :memo:
 
