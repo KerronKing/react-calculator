@@ -2,6 +2,10 @@
 
 The aim of this project was to build a simple calculator app using React.
 
+<p align="center">
+  <img src="public/screencap.jpg">
+</p>
+
 ## Live Demo
 
 Click [here](https://kerron-king-calculator.herokuapp.com/) to see a live demo.
